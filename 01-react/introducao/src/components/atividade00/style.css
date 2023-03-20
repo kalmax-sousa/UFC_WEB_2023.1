@@ -1,0 +1,46 @@
+.meusDados01{
+    align-items: center;
+    background-color: #c5c5c5;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px 16px;
+}
+
+.meusDados01 h1{
+    color: #010101;
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.meusDados02{
+    background-color: #a75401;
+    border-radius: 8px;
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+    margin-top: 32px;
+    padding: 8px 16px;
+}
+
+.meusDados02 h1{
+    color: white;
+    margin: 0;
+}
+
+.temp{
+    background-color: rgba(63, 32, 177);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 32px;
+    padding: 8px 16px;
+}
+
+.temp h2{
+    color: whitesmoke;
+    font-family: sans-serif;
+    margin: 0;
+}

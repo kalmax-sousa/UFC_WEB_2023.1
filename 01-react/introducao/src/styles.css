@@ -1,6 +1,10 @@
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
 .primeiraAula{
-  text-align: center;
-  font-family: sans-serif;
-  background-color: gray;
-  color: whitesmoke;
+  min-height: 100vh;
+  padding: 16px;
+  width: 100vw;
 }
