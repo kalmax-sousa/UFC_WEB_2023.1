@@ -1,3 +1,4 @@
+import FuncaoA from './components/06Contexto/FuncaoA';
 import './styles.css';
 //import HelloWorld from './components/00HelloWorld/HelloWorld';
 //import Calculadora from './components/01Calculadora/Calculadora';
@@ -13,12 +14,12 @@ import './styles.css';
 //import Temperatura from './components/atividade00/03Temperatura';
 
 // ATIVIDADE 01
-import Pai from './components/atividade01/01/Pai';
-import * as PC from './components/atividade01/02MeuPC';
-import { Arena, World } from './components/atividade01/03BatalhaV1';
-import { Arena as Arena2, World as World2, Hero, Enemy } from './components/atividade01/03BatalhaV2';
-import Joker from './components/atividade01/assets/joker.jpg'
-import Deadpool from './components/atividade01/assets/deadpool.jpg'
+//import Pai from './components/atividade01/01/Pai';
+//import * as PC from './components/atividade01/02MeuPC';
+//import { Arena, World } from './components/atividade01/03BatalhaV1';
+//import { Arena as Arena2, World as World2, Hero, Enemy } from './components/atividade01/03BatalhaV2';
+//import Joker from './components/atividade01/assets/joker.jpg'
+//import Deadpool from './components/atividade01/assets/deadpool.jpg'
 
 
 function App() {
@@ -43,12 +44,14 @@ function App() {
         <Bebida nome="Água"/>
     </Supermercado>*/}
 
+    <FuncaoA/>
+
       {/* ATIVIDADE 00 
       <MeusDados01/>
       <MeusDados02 nome="Kalmax" curso="Sistemas de Informação" universidade="UFC"/>
       <Temperatura/>*/}
 
-      {/* ATIVIDADE 01*/}
+      {/* ATIVIDADE 01
       <Pai/>
       <br/>
       <PC.PlacaMae nome="Gigabyte" preco="R$1399,99"/>
@@ -74,8 +77,7 @@ function App() {
           <Hero name="Deadpool" img={Deadpool}/>
           <Enemy name="Coringa" img={Joker}/>
         </Arena2>
-      </World2>
-      
+      </World2>*/}
       
 
 
