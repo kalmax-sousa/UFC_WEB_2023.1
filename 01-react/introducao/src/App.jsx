@@ -1,4 +1,3 @@
-import FuncaoA from './components/06Contexto/FuncaoA';
 import './styles.css';
 //import HelloWorld from './components/00HelloWorld/HelloWorld';
 //import Calculadora from './components/01Calculadora/Calculadora';
@@ -6,6 +5,7 @@ import './styles.css';
 //import FunctionA from './components/03Hierarquia/FunctionA';
 //import {Header, Body, Footer} from './components/04MultiploComponente/MultiploComponente';
 //import {Supermercado, Legume, Fruta, Bebida} from './components/05Children/MyChildrenV0';
+//import FuncaoA from './components/06Contexto/FuncaoA';
 
 
 // ATIVIDADE 00
@@ -20,6 +20,11 @@ import './styles.css';
 //import { Arena as Arena2, World as World2, Hero, Enemy } from './components/atividade01/03BatalhaV2';
 //import Joker from './components/atividade01/assets/joker.jpg'
 //import Deadpool from './components/atividade01/assets/deadpool.jpg'
+
+// ATIVIDADE 02
+import FunctionContextA from './components/atividade02/01Context/FunctionContextA';
+import ComponenteAvo from './components/atividade02/02Pokemon/ComponenteAvo';
+import ComponenteAvoCounter from './components/atividade02/03PokemonContador/ComponenteAvo';
 
 
 function App() {
@@ -42,9 +47,8 @@ function App() {
         <Legume nome="Cenoura"/>
         <Fruta nome="Uva"/>
         <Bebida nome="Água"/>
-    </Supermercado>*/}
-
-    <FuncaoA/>
+    </Supermercado>
+    <FuncaoA/>*/}
 
       {/* ATIVIDADE 00 
       <MeusDados01/>
@@ -78,7 +82,13 @@ function App() {
           <Enemy name="Coringa" img={Joker}/>
         </Arena2>
       </World2>*/}
-      
+
+      {/* ATIVIDADE 02 */}
+      <FunctionContextA/>
+      <hr/>
+      <ComponenteAvo/>
+      <hr/>
+      <ComponenteAvoCounter/>
 
 
     </div>
