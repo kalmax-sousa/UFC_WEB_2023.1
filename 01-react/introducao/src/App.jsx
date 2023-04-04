@@ -6,6 +6,9 @@ import './styles.css';
 //import {Header, Body, Footer} from './components/04MultiploComponente/MultiploComponente';
 //import {Supermercado, Legume, Fruta, Bebida} from './components/05Children/MyChildrenV0';
 //import FuncaoA from './components/06Contexto/FuncaoA';
+//import SaveData from './components/07Storage/FunctionLocalStorage';
+//import Pai from './components/08PaiEFilho/Pai';
+import FunctionEstados from './components/09Estados/FunctionEstados';
 
 
 // ATIVIDADE 00
@@ -22,9 +25,9 @@ import './styles.css';
 //import Deadpool from './components/atividade01/assets/deadpool.jpg'
 
 // ATIVIDADE 02
-import FunctionContextA from './components/atividade02/01Context/FunctionContextA';
-import ComponenteAvo from './components/atividade02/02Pokemon/ComponenteAvo';
-import ComponenteAvoCounter from './components/atividade02/03PokemonContador/ComponenteAvo';
+//import FunctionContextA from './components/atividade02/01Context/FunctionContextA';
+//import ComponenteAvo from './components/atividade02/02Pokemon/ComponenteAvo';
+//import ComponenteAvoCounter from './components/atividade02/03PokemonContador/ComponenteAvo';
 
 
 function App() {
@@ -47,8 +50,13 @@ function App() {
         <Legume nome="Cenoura"/>
         <Fruta nome="Uva"/>
         <Bebida nome="Água"/>
-    </Supermercado>
-    <FuncaoA/>*/}
+    </Supermercado>*/}
+    {/*<FuncaoA/>*/}
+    {/*<SaveData />
+    <Pai />*/}
+    <FunctionEstados />
+
+
 
       {/* ATIVIDADE 00 
       <MeusDados01/>
@@ -83,12 +91,12 @@ function App() {
         </Arena2>
       </World2>*/}
 
-      {/* ATIVIDADE 02 */}
+      {/* ATIVIDADE 02 
       <FunctionContextA/>
       <hr/>
       <ComponenteAvo/>
       <hr/>
-      <ComponenteAvoCounter/>
+      <ComponenteAvoCounter/>*/}
 
 
     </div>
