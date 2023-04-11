@@ -8,7 +8,8 @@ import './styles.css';
 //import FuncaoA from './components/06Contexto/FuncaoA';
 //import SaveData from './components/07Storage/FunctionLocalStorage';
 //import Pai from './components/08PaiEFilho/Pai';
-import FunctionEstados from './components/09Estados/FunctionEstados';
+//import FunctionEstados from './components/09Estados/FunctionEstados';
+//import PokemonAxios from './components/10Axios/PokemonAxios';
 
 
 // ATIVIDADE 00
@@ -29,6 +30,9 @@ import FunctionEstados from './components/09Estados/FunctionEstados';
 //import ComponenteAvo from './components/atividade02/02Pokemon/ComponenteAvo';
 //import ComponenteAvoCounter from './components/atividade02/03PokemonContador/ComponenteAvo';
 
+// ATIVIDADE 03
+//import Cidade from './components/atividade03/01Cidade/Cidade';
+import Pai from './components/atividade03/02PaiFilho/Pai';
 
 function App() {
   return (
@@ -54,7 +58,8 @@ function App() {
     {/*<FuncaoA/>*/}
     {/*<SaveData />
     <Pai />*/}
-    <FunctionEstados />
+    {/*<FunctionEstados />*/}
+    {/* <PokemonAxios/> */}
 
 
 
@@ -97,6 +102,10 @@ function App() {
       <ComponenteAvo/>
       <hr/>
       <ComponenteAvoCounter/>*/}
+
+      {/* ATIVIDADE 03 
+      <Cidade/>*/}
+      <Pai />
 
 
     </div>
