@@ -10,6 +10,8 @@ import './styles.css';
 //import Pai from './components/08PaiEFilho/Pai';
 //import FunctionEstados from './components/09Estados/FunctionEstados';
 //import PokemonAxios from './components/10Axios/PokemonAxios';
+//import TelaPincipal from './components/11Redux/v1/TelaPincipal';
+import MeuIndex from './components/11Redux/v2/MeuIndex';
 
 
 // ATIVIDADE 00
@@ -32,7 +34,7 @@ import './styles.css';
 
 // ATIVIDADE 03
 //import Cidade from './components/atividade03/01Cidade/Cidade';
-import Pai from './components/atividade03/02PaiFilho/Pai';
+//import Pai from './components/atividade03/02PaiFilho/Pai';
 
 function App() {
   return (
@@ -60,6 +62,8 @@ function App() {
     <Pai />*/}
     {/*<FunctionEstados />*/}
     {/* <PokemonAxios/> */}
+    {/* <TelaPincipal /> */}
+    <MeuIndex />
 
 
 
@@ -104,8 +108,8 @@ function App() {
       <ComponenteAvoCounter/>*/}
 
       {/* ATIVIDADE 03 
-      <Cidade/>*/}
-      <Pai />
+      <Cidade/>
+      <Pai />*/}
 
 
     </div>
