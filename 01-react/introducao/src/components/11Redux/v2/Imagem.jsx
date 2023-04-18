@@ -1,13 +1,17 @@
 import { useSelector } from "react-redux";
 
-const Imagem = () => {
+const Imagem = ({name, img}) => {
     const id = useSelector(state => state.id.value);
     return(
-        <img 
-            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`} 
-            alt="pokemon"
-            style={{width: '300px'}}
-        />
+        <>
+            <h1>ID: {id}</h1>
+            <h1>Nome: {name}</h1>
+            <img 
+                src={img} 
+                alt="pokemon"
+                style={{width: '300px'}}
+            />
+        </>
     );
 }
 

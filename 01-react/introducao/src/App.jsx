@@ -11,7 +11,8 @@ import './styles.css';
 //import FunctionEstados from './components/09Estados/FunctionEstados';
 //import PokemonAxios from './components/10Axios/PokemonAxios';
 //import TelaPincipal from './components/11Redux/v1/TelaPincipal';
-import MeuIndex from './components/11Redux/v2/MeuIndex';
+//import MeuIndex from './components/11Redux/v2/MeuIndex';
+//import MinhaPromise from './components/12Promises/MinhaPromise';
 
 
 // ATIVIDADE 00
@@ -63,8 +64,8 @@ function App() {
     {/*<FunctionEstados />*/}
     {/* <PokemonAxios/> */}
     {/* <TelaPincipal /> */}
-    <MeuIndex />
-
+    {/* <MeuIndex /> */}
+    {/* <MinhaPromise /> */}
 
 
       {/* ATIVIDADE 00 
