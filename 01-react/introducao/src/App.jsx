@@ -12,7 +12,9 @@ import './styles.css';
 //import PokemonAxios from './components/10Axios/PokemonAxios';
 //import TelaPincipal from './components/11Redux/v1/TelaPincipal';
 //import MeuIndex from './components/11Redux/v2/MeuIndex';
-//import MinhaPromise from './components/12Promises/MinhaPromise';
+//import MinhaPromise from './components/12PromisesAsync/MinhaPromise';
+//import MeuAsync from './components/12PromisesAsync/MeuAsync';
+import MyRefs from './components/13Refs/MyRefs';
 
 
 // ATIVIDADE 00
@@ -66,6 +68,8 @@ function App() {
     {/* <TelaPincipal /> */}
     {/* <MeuIndex /> */}
     {/* <MinhaPromise /> */}
+    {/* <MeuAsync /> */}
+    <MyRefs />
 
 
       {/* ATIVIDADE 00 
