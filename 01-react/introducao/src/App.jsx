@@ -14,7 +14,7 @@ import './styles.css';
 //import MeuIndex from './components/11Redux/v2/MeuIndex';
 //import MinhaPromise from './components/12PromisesAsync/MinhaPromise';
 //import MeuAsync from './components/12PromisesAsync/MeuAsync';
-import MyRefs from './components/13Refs/MyRefs';
+//import MyRefs from './components/13Refs/MyRefs';
 
 
 // ATIVIDADE 00
@@ -38,6 +38,12 @@ import MyRefs from './components/13Refs/MyRefs';
 // ATIVIDADE 03
 //import Cidade from './components/atividade03/01Cidade/Cidade';
 //import Pai from './components/atividade03/02PaiFilho/Pai';
+
+// ATIVIDAE 04
+// import Questao01 from './components/atividade04/01Promise/Questao01';
+// import Questao02 from './components/atividade04/02TryCatch/Questao02';
+// import FuncaoMain from './components/atividade04/03Fetch/FuncaoMain';
+
 
 function App() {
   return (
@@ -68,8 +74,8 @@ function App() {
     {/* <TelaPincipal /> */}
     {/* <MeuIndex /> */}
     {/* <MinhaPromise /> */}
-    {/* <MeuAsync /> */}
-    <MyRefs />
+    {/* <MeuAsync /> 
+    <MyRefs />*/}
 
 
       {/* ATIVIDADE 00 
@@ -115,6 +121,14 @@ function App() {
       {/* ATIVIDADE 03 
       <Cidade/>
       <Pai />*/}
+
+
+      {/* ATIVIDADE 04 
+      <Questao01 />
+      <hr />
+      <Questao02 />
+      <hr />
+      <FuncaoMain />*/}
 
 
     </div>
