@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ptBR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="meucss.css">
+    <title>Flexbox</title>
+</head>
+<body>
+    <header>
+        <h1>Pequeno Manual - Flexbox</h1>
+    </header>
+
+    <div class="grid">
+        <div class="items-grid">
+            <h2>flexDirection: row</h2>
+            <div class="box row">
+                <div class="item">UM</div>
+                <div class="item">DOIS</div>
+                <div class="item">TRÉS</div>
+            </div>
+        </div>
+        
+        <div class="items-grid">
+            <h2>flexDirection: row-reverse</h2>
+            <div class="box row-reverse">
+                <div class="item">UM</div>
+                <div class="item">DOIS</div>
+                <div class="item">TRÉS</div>
+            </div>
+        </div>
+        
+        <div class="items-grid">
+            <h2>flexDirection: column</h2>
+            <div class="box column">
+                <div class="item">UM</div>
+                <div class="item">DOIS</div>
+                <div class="item">TRÉS</div>
+            </div>
+        </div>
+        
+        <div class="items-grid">
+            <h2>flexDirection: column-reverse</h2>
+            <div class="box column-reverse">
+                <div class="item">UM</div>
+                <div class="item">DOIS</div>
+                <div class="item">TRÉS</div>
+            </div>
+        </div>
+
+        <div class="items-grid box-wrap">
+            <h2>flex-wrap: row</h2>
+            <div class="wrap">
+                <div class="items-wrap"></div>
+                <div class="items-wrap"></div>
+                <div class="items-wrap"></div>
+                <div class="items-wrap"></div>
+                <div class="items-wrap"></div>
+                <div class="items-wrap"></div>
+                <div class="items-wrap"></div>
+                <div class="items-wrap"></div>
+            </div>
+        </div>
+        
+        <div class="items-grid box-wrap">
+            <h2>flex-wrap: column</h2>
+            <div class="wrap wrap-column">
+                <div class="items-wrap"></div>
+                <div class="items-wrap"></div>
+                <div class="items-wrap"></div>
+                <div class="items-wrap"></div>
+                <div class="items-wrap"></div>
+                <div class="items-wrap"></div>
+                <div class="items-wrap"></div>
+                <div class="items-wrap"></div>
+            </div>
+        </div>
+
+        <div class="items-grid box-flex">
+            <h2>box-flex</h2>
+            <div class="flex">
+                <div class="items-flex one">Um</div>
+                <div class="items-flex two">Dois</div>
+                <div class="items-flex three">Três</div>
+            </div>
+        </div>
+
+        <div class="items-grid">
+            <h2>row - align-items</h2>
+            <div>
+                <div class="item-align align-start">
+                    <span class="span">START</span>
+                    <span class="span">START</span>
+                    <span class="span">START</span>
+                    <span class="span">START</span>
+                </div>
+                <div class="item-align align-center">
+                    <span class="span">CENTER</span>
+                    <span class="span">CENTER</span>
+                    <span class="span">CENTER</span>
+                    <span class="span">CENTER</span>
+                </div>
+                <div class="item-align align-end">
+                    <span class="span">END</span>
+                    <span class="span">END</span>
+                    <span class="span">END</span>
+                    <span class="span">END</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="items-grid">
+            <h2>column - align-items</h2>
+            <div>
+                <div class="column item-align align-start">
+                    <span class="span">START</span>
+                    <span class="span">START</span>
+                </div>
+                <div class="column item-align align-center">
+                    <span class="span">CENTER</span>
+                    <span class="span">CENTER</span>
+                </div>
+                <div class=" column item-align align-end">
+                    <span class="span">END</span>
+                    <span class="span">END</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="items-grid">
+            <h2>row - justify-content</h2>
+            <div>
+                <div class=item-justify justify-start">
+                    <span class="span">START</span>
+                    <span class="span">START</span>
+                    <span class="span">START</span>
+                </div>
+                <div class=item-justify justify-center">
+                    <span class="span">CENTER</span>
+                    <span class="span">CENTER</span>
+                    <span class="span">CENTER</span>
+                </div>
+                <div class="item-justify justify-end">
+                    <span class="span">END</span>
+                    <span class="span">END</span>
+                    <span class="span">END</span>
+                </div>
+                <div class="item-justify justify-around">
+                    <span class="span">AROUND</span>
+                    <span class="span">AROUND</span>
+                    <span class="span">AROUND</span>
+                </div>
+                <div class="item-justify justify-between">
+                    <span class="span">BETWEEN</span>
+                    <span class="span">BETWEEN</span>
+                    <span class="span">BETWEEN</span>
+                </div>
+                <div class="item-justify justify-evelyn">
+                    <span class="span">EVELYN</span>
+                    <span class="span">EVELYN</span>
+                    <span class="span">EVELYN</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="items-grid">
+            <h2>column - justify-content</h2>
+            <div>
+                <div class="column item-justify justify-start">
+                    <span class="span">START</span>
+                    <span class="span">START</span>
+                    <span class="span">START</span>
+                </div>
+                <div class="column item-justify justify-center">
+                    <span class="span">CENTER</span>
+                    <span class="span">CENTER</span>
+                    <span class="span">CENTER</span>
+                </div>
+                <div class=" column item-justify justify-end">
+                    <span class="span">END</span>
+                    <span class="span">END</span>
+                    <span class="span">END</span>
+                </div>
+                <div class=" column item-justify justify-around">
+                    <span class="span">AROUND</span>
+                    <span class="span">AROUND</span>
+                    <span class="span">AROUND</span>
+                </div>
+                <div class=" column item-justify justify-between">
+                    <span class="span">BETWEEN</span>
+                    <span class="span">BETWEEN</span>
+                    <span class="span">BETWEEN</span>
+                </div>
+                <div class=" column item-justify justify-evelyn">
+                    <span class="span">EVELYN</span>
+                    <span class="span">EVELYN</span>
+                    <span class="span">EVELYN</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

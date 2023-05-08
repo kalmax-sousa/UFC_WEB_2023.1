@@ -1,0 +1,162 @@
+body{
+    background-color: #212121;
+    color: white;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+}
+
+.grid{
+    max-width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.items-grid{
+    border: 1px solid white;
+    padding: 16px;
+}
+
+.box{
+    display: flex;
+    gap: 16px
+}
+
+.row{
+    flex-direction: row;
+    height: 256px;
+}
+
+.row-reverse{
+    flex-direction: row-reverse;
+    height: 256px;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.column-reverse{
+    flex-direction: column-reverse;
+}
+
+.item {
+    background-color: #b100cd;
+    padding: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-wrap{
+    max-height: 400px;
+    overflow: clip;
+}
+
+.wrap{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.wrap-column{
+    height: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.items-wrap{
+    height: 128px;
+    width: 128px;
+    background-color: #00acc1;
+}
+
+.box-flex{
+    grid-column: span 2;
+}
+
+.flex{
+    display: flex;
+}
+
+.items-flex{
+    background-color: #43a047;
+    border: 1px solid whitesmoke;
+    height: 128px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.one{
+    flex: 1;
+}
+
+.two{
+    flex: 2;
+}
+
+.three{
+    flex: 3;
+}
+
+.item-align{
+    border: 1px solid white;
+    display: flex;
+    height: 128px;
+    padding: 12px;
+    background-color: #e53935;
+}
+
+.align-start{
+    align-items: flex-start;
+}
+
+.align-center{
+    align-items: center;
+}
+
+.align-end{
+    align-items: flex-end;
+}
+
+.item-justify{
+    height: 256px;
+    padding: 12px;
+    border: 1px solid white;
+    display: flex;
+    background-color: #e53935;
+}
+
+.justify-start{
+    justify-content: flex-start;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.justify-end{
+    justify-content: flex-end;
+}
+
+.justify-between{
+    justify-content: space-between;
+}
+
+.justify-around{
+    justify-content: space-around;
+}
+
+.justify-evelyn{
+    justify-content: space-evenly;
+}
+
+.span{
+    padding: 8px;
+    border: 1px solid white;
+}
