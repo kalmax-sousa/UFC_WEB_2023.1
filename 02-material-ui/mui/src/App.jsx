@@ -6,14 +6,13 @@ import '@fontsource/roboto/700.css';
 //import SignIn from './components/01SignIn/SignIn'
 // import MyMenuV0 from './components/02CRUD/MyMenuV0';
 import MyMenuV1 from './components/02CRUD/MyMenuV1';
+import MainPage from './components/02CRUD/MainPAge';
+import Router from './routes/router';
+import Dashboard from './components/02CRUD/Dashboard';
 
 function App() {
   return (
-    <>
-      {/* <SignIn/> */}
-      {/* <MyMenuV0 /> */}
-      <MyMenuV1 />
-    </>
+    <Dashboard />
   )
 }
 

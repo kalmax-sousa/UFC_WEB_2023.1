@@ -1,20 +1,22 @@
 import {AppBar, Box, Button, Container, Menu, MenuItem, Toolbar, Typography} from '@mui/material'
 import AdbIcon from '@mui/icons-material/Adb';
 import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 const MyMenuV1 = () => {
     
     const [anchorElProfessor, setAnchorElProfessor] = useState(null)
+    const [anchorElAluno, setAnchorElAluno] = useState(null)
 
-    const handleOpenProfMenu = (event) => {
-        setAnchorElProfessor(event.currentTarget)
+    const handleOpenMenu = (set, event) => {
+        set(event.currentTarget)
     }
 
-    const handleCloseProfMenu = () => {
-        setAnchorElProfessor(null)
+    const handleCloseMenu = (set) => {
+        set(null)
     }
 
-    const profDropMenu = () => {
+    function profDropMenu(set, link, text) {
         return(
             <Box>
                 <Button
@@ -22,22 +24,60 @@ const MyMenuV1 = () => {
                         my: 2,
                         color: 'white'
                     }}
-                    onClick={handleOpenProfMenu}
+                    onClick={(e) => handleOpenMenu(setAnchorElProfessor, e)}
                     
                 >
                     Professores
                 </Button>
 
-                <Menu 
+                <Menu
                     anchorEl={anchorElProfessor}
-                    open={!!anchorElProfessor}
-                    onClose={handleCloseProfMenu}
+                    open={Boolean(anchorElProfessor)}
+                    onClick={() => handleCloseMenu(setAnchorElProfessor)}
                 >
-                   <MenuItem onClick={handleCloseProfMenu}>
+                    <MenuItem
+                        onClick={() => handleCloseMenu(setAnchorElProfessor)}
+                        component={Link}
+                        to={"/professor/cadastrar"} 
+                    >
                         <Typography>Cadastrar</Typography>
                    </MenuItem>
 
-                   <MenuItem onClick={handleCloseProfMenu}>
+                   <MenuItem onClick={() => handleCloseMenu(setAnchorElProfessor)}>
+                        <Typography>Listar</Typography>
+                   </MenuItem> 
+                </Menu>
+            </Box>
+        )
+    }
+    function itemMenu(state, set, text, link) {
+        return(
+            <Box>
+                <Button
+                    sx={{
+                        my: 2,
+                        color: 'white'
+                    }}
+                    onClick={(e) => handleOpenMenu(set, e)}
+                    
+                >
+                    {text}
+                </Button>
+
+                <Menu
+                    anchorEl={state}
+                    open={Boolean(state)}
+                    onClick={() => handleCloseMenu(set)}
+                >
+                    <MenuItem
+                        onClick={() => handleCloseMenu(set)}
+                        component={Link}
+                        to={link.cadastrar} 
+                    >
+                        <Typography>Cadastrar</Typography>
+                   </MenuItem>
+
+                   <MenuItem onClick={() => handleCloseMenu(set)}>
                         <Typography>Listar</Typography>
                    </MenuItem> 
                 </Menu>
@@ -45,51 +85,51 @@ const MyMenuV1 = () => {
         )
     }
 
+    
+
     return(
-        <AppBar>
-            <Container maxWidth='xl'>
+        <AppBar position="static">
+            <Container maxWidth="xl">
                 <Toolbar>
-                    <AdbIcon/>
-                    <Typography 
-                        variant='h5'
+                    <AdbIcon
+                        sx={{
+                            display: "flex",
+                            mr: 1
+                        }}
+                    />
+                    <Typography
+                        variant="h5"
                         component="a"
                         href="/"
                         sx={{
-                            textDecoration: 'none',
-                            ml: 1,
-                            fontFamily: 'monospace',
-                            fontWeight:700,
+
+                            fontFamily: "monospace",
+                            fontWeight: 700,
                             letterSpacing: ".2rem",
-                            color: 'white'
+                            color: "white",
+                            textDecoration: "none"
                         }}
                     >
-                        CRUD
+                        CRUD V1
                     </Typography>
 
                     <Box
                         sx={{
-                            display: 'flex',
+                            display: "flex",
                             flex: 1,
-                            alignItems: 'center',
-                            ml: 3,
+                            alignItems: "center",
+                            justifyContent: "flex-end",
+                            ml: 3
                         }}
                     >
-                        {profDropMenu()}
+                        {itemMenu(anchorElProfessor, setAnchorElProfessor, "Professores", {cadastrar: "/professor/cadastrar"})}
+                        {itemMenu(anchorElAluno, setAnchorElAluno, "Alunos", {cadastrar: "/aluno/cadastrar"})}
 
                         <Button
                             sx={{
-                                my: 2,
-                                color: 'white'
+                                my: 2, color: "white"
                             }}
-                        >
-                            Alunos
-                        </Button>
-
-                        <Button
-                            sx={{
-                                my: 2,
-                                color: 'white'
-                            }}
+                            onClick={() => alert("Clicou em Sobre!")}
                         >
                             Sobre
                         </Button>
