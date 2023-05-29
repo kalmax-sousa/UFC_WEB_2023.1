@@ -75,9 +75,13 @@ const MyMenuV1 = () => {
                         to={link.cadastrar} 
                     >
                         <Typography>Cadastrar</Typography>
-                   </MenuItem>
+                    </MenuItem>
 
-                   <MenuItem onClick={() => handleCloseMenu(set)}>
+                    <MenuItem 
+                        onClick={() => handleCloseMenu(set)}
+                        component={Link}
+                        to={link.listar} 
+                    >
                         <Typography>Listar</Typography>
                    </MenuItem> 
                 </Menu>
@@ -102,7 +106,6 @@ const MyMenuV1 = () => {
                         component="a"
                         href="/"
                         sx={{
-
                             fontFamily: "monospace",
                             fontWeight: 700,
                             letterSpacing: ".2rem",
@@ -122,8 +125,8 @@ const MyMenuV1 = () => {
                             ml: 3
                         }}
                     >
-                        {itemMenu(anchorElProfessor, setAnchorElProfessor, "Professores", {cadastrar: "/professor/cadastrar"})}
-                        {itemMenu(anchorElAluno, setAnchorElAluno, "Alunos", {cadastrar: "/aluno/cadastrar"})}
+                        {itemMenu(anchorElProfessor, setAnchorElProfessor, "Professores", {cadastrar: "/professor/cadastrar", listar: "/professor"})}
+                        {itemMenu(anchorElAluno, setAnchorElAluno, "Alunos", {cadastrar: "/aluno/cadastrar", listar: "/aluno"})}
 
                         <Button
                             sx={{
