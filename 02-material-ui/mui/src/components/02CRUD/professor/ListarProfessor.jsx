@@ -1,17 +1,33 @@
 import { Box, IconButton, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material"
 import {Delete, Edit} from "@mui/icons-material"   
 import MainPage from "../MainPAge"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import { useEffect, useState } from "react"
+import axios from 'axios'
 
 const ListarProfessor = () => {
+    const navigate = useNavigate();
 
-    const professores = [
-        {id: 0, nome: "Vito Corleone", curso: "SI", titulacao: "GRAD"},
-        {id: 1, nome: "Michael Corleone", curso: "DD", titulacao: "DOUT"},
-        {id: 2, nome: "Kay Adams", curso: "CC", titulacao: "MEST"},
-        {id: 3, nome: "Luca Brasil", curso: "SI", titulacao: "GRAD"},
-        {id: 4, nome: "Peter Clemenza", curso: "SI", titulacao: "DOUT"},
-    ]
+    const [professores, setProfessores] = useState([]);
+    const [change, setChange] = useState(false);
+
+    useEffect(() => {
+        axios.get('http://localhost:3333/professor')
+            .then(res => setProfessores(res.data))
+            .catch(err => console.log(err))
+    }, [])
+
+    function deleteProfessor(id){
+        if(window.confirm("Tem certeza que deseja excluir?")){
+            axios.delete(`http://localhost:3333/professor/delete/${id}`)
+                .then(res => {
+                    const newArray = professores.filter(professor => professor.id !== Number(id))
+                    setProfessores(newArray)
+                    setChange(!change)
+                })
+                .catch(err => console.log(err))
+        }
+    }
 
     return(
         <MainPage>
@@ -38,7 +54,7 @@ const ListarProfessor = () => {
                                 <TableCell>{professor.titulacao}</TableCell>
                                 <TableCell>
                                     <Box>
-                                        <IconButton aria-label="delete" color="error">
+                                        <IconButton aria-label="delete" color="error" onClick={() => deleteProfessor(professor.id)}>
                                             <Delete />
                                         </IconButton>
                                         <IconButton 

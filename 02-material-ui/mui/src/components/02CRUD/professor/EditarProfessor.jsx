@@ -1,32 +1,13 @@
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import { Box, Button, Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel, InputLabel, MenuItem, Select, TextField, Typography } from "@mui/material"
 import MainPage from "../MainPAge"
 import { useEffect, useState } from "react"
+import axios from 'axios'
 
-const professores = [
-    {id: 0, nome: "Vito Corleone", curso: "SI", titulacao: "GRAD", ai: {es: true, al: true, ds: false, mc: true}},
-    {id: 1, nome: "Michael Corleone", curso: "DD", titulacao: "DOUT", ai: {es: true, al: true, ds: false, mc: false}},
-    {id: 2, nome: "Kay Adams", curso: "CC", titulacao: "MEST", ai: {es: false, al: true, ds: true, mc: false} },
-    {id: 3, nome: "Luca Brasil", curso: "SI", titulacao: "GRAD", ai: {es: true, al: true, ds: false, mc: true}},
-    {id: 4, nome: "Peter Clemenza", curso: "SI", titulacao: "DOUT", ai: {es: true, al: true, ds: false, mc: true}},
-]
 
 const EditarProfessor = () => {
     const {id} = useParams()
-
-    function getProfessorById(id) {
-        return professores.find(professor => professor.id === Number(id))
-    }
-
-    useEffect(() => {
-        const professor = getProfessorById(id)
-        if(professor){
-            setNome(professor.nome)
-            setCurso(professor.curso)
-            setTitulacao(professor.titulacao)
-            setAreaInteresse(professor.ai)
-        }
-    }, [])
+    const navigate = useNavigate();
 
     const [nome, setNome] = useState("")
     const [curso, setCurso] = useState("")
@@ -38,14 +19,33 @@ const EditarProfessor = () => {
         mc: false
     })
 
+    useEffect(() => {
+        axios.get(`http://localhost:3333/professor/retrieve/${id}`)
+            .then(response => {
+                setNome(response.data.nome)
+                setCurso(response.data.curso)
+                setTitulacao(response.data.titulacao)
+                setAreaInteresse(response.data.areaInteresse)
+            })
+            .catch(error => {console.log(error)})
+    }, [])
+
+
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(nome, curso, titulacao, areaInteresse)
+        
+        const professorAtualizado = {nome, curso, titulacao, areaInteresse}
+        axios.put(`http://localhost:3333/professor/update/${id}`, professorAtualizado)
+            .then(res => {
+                alert(`Professor ${id} atualzado com sucesso!`)
+                navigate("/professor")
+            })
+            .catch(err => console.log(err))
     }
 
     const handleCheckbox = (event) => {
         setAreaInteresse({
-            ...ai, [event.target.name]: event.target.checked
+            ...areaInteresse, [event.target.name]: event.target.checked
         })
     }
 

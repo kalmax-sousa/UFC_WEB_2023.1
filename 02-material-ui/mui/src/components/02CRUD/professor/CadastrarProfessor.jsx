@@ -1,8 +1,12 @@
 import { Box, Button, Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel, InputLabel, MenuItem, Select, TextField, Typography } from "@mui/material"
 import MainPage from "../MainPAge"
 import { useState } from "react"
+import axios from 'axios'
+import { useNavigate } from "react-router-dom"
 
 const CadastrarProfessor = () => {
+
+    const navigate = useNavigate()
 
     const [nome, setNome] = useState("")
     const [curso, setCurso] = useState("")
@@ -17,11 +21,20 @@ const CadastrarProfessor = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log(nome, curso, titulacao, areaInteresse)
+
+        const newProfessor = {nome, curso, titulacao, areaInteresse}
+
+        axios.post('http://localhost:3333/professor/register', newProfessor)
+            .then(response => {
+                alert(`Professor ${response.data.id} cadastrado com sucesso!`)
+                navigate('/professor')
+            })
+            .catch(error => {console.log(error)})
     }
 
     const handleCheckbox = (event) => {
         setAreaInteresse({
-            ...ai, [event.target.name]: event.target.checked
+            ...areaInteresse, [event.target.name]: event.target.checked
         })
     }
 
