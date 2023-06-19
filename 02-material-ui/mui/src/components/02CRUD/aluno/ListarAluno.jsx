@@ -5,24 +5,24 @@ import { Link, useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react"
 import axios from 'axios'
 
-const ListarProfessor = () => {
+const ListarAluno = () => {
     const navigate = useNavigate();
 
-    const [professores, setProfessores] = useState([]);
+    const [alunos, setAlunos] = useState([]);
     const [change, setChange] = useState(false);
 
     useEffect(() => {
-        axios.get('http://localhost:3333/professor')
-            .then(res => setProfessores(res.data))
+        axios.get('http://localhost:3333/aluno')
+            .then(res => setAlunos(res.data))
             .catch(err => console.log(err))
     }, [])
 
-    function deleteProfessor(id){
+    function deleteAluno(id){
         if(window.confirm("Tem certeza que deseja excluir?")){
-            axios.delete(`http://localhost:3333/professor/delete/${id}`)
+            axios.delete(`http://localhost:3333/aluno/delete/${id}`)
                 .then(res => {
-                    const newArray = professores.filter(professor => professor._id !== Number(id))
-                    setProfessores(newArray)
+                    const newArray = alunos.filter(aluno => aluno._id !== Number(id))
+                    setAlunos(newArray)
                     setChange(!change)
                 })
                 .catch(err => console.log(err))
@@ -31,7 +31,7 @@ const ListarProfessor = () => {
 
     return(
         <MainPage>
-            <Typography variant="h5" fontWeight="bold"> Listar Professor </Typography>
+            <Typography variant="h5" fontWeight="bold"> Listar Aluno </Typography>
 
             <TableContainer component={Paper} sx={{mt: 4}}>
                 <Table sx={{minWidth: 650}} aria-label="simple table">
@@ -40,21 +40,20 @@ const ListarProfessor = () => {
                             <TableCell>ID</TableCell>
                             <TableCell>NOME</TableCell>
                             <TableCell>CURSO</TableCell>
-                            <TableCell>TITULAÇÃO</TableCell>
-                            <TableCell>AÇÕES</TableCell>
+                            <TableCell>IRA</TableCell>
                         </TableRow>
                     </TableHead>
 
                     <TableBody>
-                        {professores.map((professor) => (
-                            <TableRow key={professor._id} sx={{'&:nth-of-type(odd)': {backgroundColor: "#e5e5e5"}}}>
-                                <TableCell>{professor._id}</TableCell>
-                                <TableCell>{professor.nome}</TableCell>
-                                <TableCell>{professor.curso}</TableCell>
-                                <TableCell>{professor.titulacao}</TableCell>
+                        {alunos.map((aluno) => (
+                            <TableRow key={aluno._id} sx={{'&:nth-of-type(odd)': {backgroundColor: "#e5e5e5"}}}>
+                                <TableCell>{aluno._id}</TableCell>
+                                <TableCell>{aluno.nome}</TableCell>
+                                <TableCell>{aluno.curso}</TableCell>
+                                <TableCell>{aluno.ira}</TableCell>
                                 <TableCell>
                                     <Box>
-                                        <IconButton aria-label="delete" color="error" onClick={() => deleteProfessor(professor._id)}>
+                                        <IconButton aria-label="delete" color="error" onClick={() => deleteAluno(aluno._id)}>
                                             <Delete />
                                         </IconButton>
                                         <IconButton 
@@ -62,7 +61,7 @@ const ListarProfessor = () => {
                                             color="primary"
                                             sx={{ml: 2}}
                                             component={Link}
-                                            to={`/professor/editar/${professor._id}`}
+                                            to={`/aluno/editar/${aluno._id}`}
                                         >
                                             <Edit />
                                         </IconButton>
@@ -77,4 +76,4 @@ const ListarProfessor = () => {
     )
 }
 
-export default ListarProfessor
+export default ListarAluno

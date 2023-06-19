@@ -3,8 +3,11 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+require('./db/mongo.connection');
+
 var users = require('./routes/users');
 var professores = require('./routes/professores');
+var alunos = require('./routes/alunos');
 
 var app = express();
 
@@ -21,6 +24,7 @@ app.use(function (req, res, next) {
 
 app.use('/api/v1/users', users);
 app.use('/professor/', professores);
+app.use('/aluno/', alunos);
 
 
 module.exports = app;

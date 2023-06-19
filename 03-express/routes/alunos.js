@@ -1,26 +1,25 @@
 var express = require('express');
 var router = express.Router();
-var ProfessorServices = require('../services/professor.services');
-var ProfessorServiceMongo = require('../services/professor.services.mongo');
+var AlunoService = require('../services/aluno.services.mongo');
 
 /* GET users listing. */
 router.get('/', (req, res, next) => {
-    ProfessorServiceMongo.getAll(req, res)
+    AlunoService.getAll(req, res)
 })
 
 router.post('/register', (req, res, next) => {
-    ProfessorServiceMongo.register(req, res)
+    AlunoService.register(req, res)
 })
 
 router.put('/update/:id', (req, res, next) => {
-    ProfessorServiceMongo.update(req, res)
+    AlunoService.update(req, res)
 })
 
 router.delete('/delete/:id', (req, res, next) => {
-    ProfessorServiceMongo.delete(req, res)
+    AlunoService.delete(req, res)
 })
 
 router.get('/retrieve/:id', (req, res, next) => {
-    ProfessorServiceMongo.retrieve(req, res)
+    AlunoService.retrieve(req, res)
 })
 module.exports = router;

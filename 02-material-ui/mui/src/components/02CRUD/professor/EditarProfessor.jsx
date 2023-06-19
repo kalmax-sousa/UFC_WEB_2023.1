@@ -37,7 +37,7 @@ const EditarProfessor = () => {
         const professorAtualizado = {nome, curso, titulacao, areaInteresse}
         axios.put(`http://localhost:3333/professor/update/${id}`, professorAtualizado)
             .then(res => {
-                alert(`Professor ${id} atualzado com sucesso!`)
+                alert(`Professor ${res.data._id} atualzado com sucesso!`)
                 navigate("/professor")
             })
             .catch(err => console.log(err))

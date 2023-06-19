@@ -26,7 +26,7 @@ const CadastrarProfessor = () => {
 
         axios.post('http://localhost:3333/professor/register', newProfessor)
             .then(response => {
-                alert(`Professor ${response.data.id} cadastrado com sucesso!`)
+                alert(`Professor ${response.data._id} cadastrado com sucesso!`)
                 navigate('/professor')
             })
             .catch(error => {console.log(error)})
